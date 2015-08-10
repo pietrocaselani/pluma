@@ -29,19 +29,19 @@ include_directories(${JNI_INCLUDE_DIRS})
 include_directories(${SQLITE_PATH}/jni)
 
 set(SOURCE_FILES
-    jni/database.cpp
-    jni/database.h
-    jni/statement.cpp
-    jni/statement.h
-    jni/JSQLiteFunction.cpp
-    jni/JSQLiteFunction.h
-    jni/SQLiteFunction.cpp
-    jni/SQLiteFunction.h
-    jni/Utils.cpp
-    jni/Utils.h
-    jni/character_tokenizer.cpp
-    jni/character_tokenizer.h
-    jni/fts3_tokenizer.h)
+    src/main/jni/database.cpp
+    src/main/jni/database.h
+    src/main/jni/statement.cpp
+    src/main/jni/statement.h
+    src/main/jni/JSQLiteFunction.cpp
+    src/main/jni/JSQLiteFunction.h
+    src/main/jni/SQLiteFunction.cpp
+    src/main/jni/SQLiteFunction.h
+    src/main/jni/Utils.cpp
+    src/main/jni/Utils.h
+    src/main/jni/character_tokenizer.cpp
+    src/main/jni/character_tokenizer.h
+    src/main/jni/fts3_tokenizer.h)
 
 add_library(pluma_shared SHARED ${SOURCE_FILES})
 add_library(pluma_static STATIC ${SOURCE_FILES})

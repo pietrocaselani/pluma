@@ -1,0 +1,43 @@
+apply plugin: 'java'
+apply from: 'java.gradle'
+
+group 'com.flipstudio.pluma'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.6
+
+tasks.withType(Test) {
+    systemProperty 'java.library.path', 'src/main/libs/'
+}
+
+jar {
+    from {
+        fileTree(dir:'src/main/libs/', includes: ['libpluma.a', 'libpluma.dylib', 'libpluma.so', 'libpluma.dll'])
+    }
+
+    into('lib/arm64-v8a/') {
+        from 'src/main/libs/arm64-v8a/libpluma.so'
+    }
+    into('lib/armeabi/') {
+        from 'src/main/libs/armeabi/libpluma.so'
+    }
+    into('lib/armeabi-v7a/') {
+        from 'src/main/libs/armeabi-v7a/libpluma.so'
+    }
+    into('lib/mips/') {
+        from 'src/main/libs/mips/libpluma.so'
+    }
+    into('lib/mips64/') {
+        from 'src/main/libs/mips64/libpluma.so'
+    }
+    into('lib/x86/') {
+        from 'src/main/libs/x68/libpluma.so'
+    }
+    into('lib/x86_64/') {
+        from 'src/main/libs/x86_64/libpluma.so'
+    }
+}
+
+dependencies {
+    testCompile 'junit:junit:4.11'
+}
