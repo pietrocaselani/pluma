@@ -1,8 +1,8 @@
 apply plugin: 'java'
 apply from: 'java.gradle'
 
-group 'com.flipstudio.pluma'
-version '1.0-SNAPSHOT'
+group 'io.github.pietrocaselani'
+version '1.0.1'
 
 sourceCompatibility = 1.6
 
@@ -31,7 +31,7 @@ jar {
         from 'src/main/libs/mips64/libpluma.so'
     }
     into('lib/x86/') {
-        from 'src/main/libs/x68/libpluma.so'
+        from 'src/main/libs/x86/libpluma.so'
     }
     into('lib/x86_64/') {
         from 'src/main/libs/x86_64/libpluma.so'
